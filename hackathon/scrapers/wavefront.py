@@ -3,10 +3,13 @@ import requests.packages.urllib3
 import numpy as np
 from datetime import datetime
 from hackathon.models import Node, Edge
+from pluto.config_reader import ConfigReader
+
+config = ConfigReader()
 requests.packages.urllib3.disable_warnings()
 
 base_url = 'https://metrics.wavefront.com'
-api_key = FILL ME IN
+api_key = config.get_param('Wavefront', 'api_key')
 
 def unix_time_millis(dt):
     epoch = datetime.utcfromtimestamp(0)
