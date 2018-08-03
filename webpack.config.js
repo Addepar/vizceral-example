@@ -51,5 +51,6 @@ module.exports = {
       favicon: './src/favicon.ico',
       inject: true
     })
-  ]
+  ],
+  watch: true
 };
