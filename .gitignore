@@ -1,6 +1,6 @@
 # System
 .DS_Store
-
+.vscode
 # IDE config
 /.idea
 
@@ -10,9 +10,11 @@
 /dist
 npm-debug.log
 node_modules
-
+*.pyc
 # Typings
 *.ts
+
+venv
 
 # Temporary Files and Backups
 *.swp
