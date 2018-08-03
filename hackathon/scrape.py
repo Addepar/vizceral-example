@@ -51,8 +51,8 @@ def process_edges(edges):
 
 def main():
     end = datetime.now().replace(microsecond=0,second=0,minute=0) + timedelta(hours=-1)
-    end = datetime(2018, 7, 31, 11)
-    start = end + timedelta(hours=0)
+    end = datetime(2018, 8, 3, 2)
+    start = end + timedelta(hours=-23)
 
     timestamps = [timestamp for timestamp in rrule.rrule(rrule.HOURLY, dtstart=start, until=end)]
     for timestamp in reversed(timestamps):

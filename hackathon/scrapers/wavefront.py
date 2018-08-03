@@ -4,8 +4,9 @@ import numpy as np
 from datetime import datetime
 from hackathon.models import Node, Edge
 from pluto.config_reader import ConfigReader
+import os.path
 
-config = ConfigReader('~/config/secrets.addepar')
+config = ConfigReader(os.path.expanduser('~/config/secrets.addepar'))
 requests.packages.urllib3.disable_warnings()
 
 base_url = 'https://metrics.wavefront.com'
