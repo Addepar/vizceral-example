@@ -151,7 +151,6 @@ class TrafficFlow extends React.Component {
   beginSampleData () {
     this.traffic = { nodes: [], connections: [] };
     const params = queryString.parse(window.location.search);
-    console.log(params.time);
     var filename = 'sample_data';
     if (params.time) {
       filename = params.time
@@ -162,6 +161,14 @@ class TrafficFlow extends React.Component {
         if (res && res.status === 200) {
           this.traffic.clientUpdateTime = Date.now();
           this.updateData(res.body);
+          const timestamp = filename.slice(0, -6) + ":00:00Z";
+          const new_timestamp = Date.parse(timestamp) + 60*60*1000;
+          const new_filename = (new Date(new_timestamp)).toISOString().slice(0, -11) + '-00-00'
+
+          console.log(new_filename);
+          setTimeout(function () {
+            window.location.replace("http://0.0.0.0:8080/us-west-1?time=" + new_filename);
+        }, 10000);
         }
       });
   }
