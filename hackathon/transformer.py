@@ -32,7 +32,7 @@ def main():
         # Do processing again just in case we update alias logic
         edges = process_edges(edges)
 
-        output_filename = os.path.join('src/data', directory + '.json').replace(':', '-')
+        output_filename = os.path.join('hackathon/transformed', directory + '.json').replace(':', '-')
         # output_filename = os.path.join('hackathon/transformed', 'output.json').replace(':', '-')
         
         output = {

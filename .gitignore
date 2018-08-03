@@ -20,3 +20,5 @@ venv
 *.swp
 *.*~
 package-lock.json
+
+*.pyc

@@ -22,7 +22,7 @@ import hackathon.transformer as transformer
 SCRAPERS = {
     'ApiLB': NginxScraper('_sourceHost=mslb-*-prod.addepar.com'),
     'Repgen': RepgenScraper(),
-    # 'Iverson': NginxScraper('_sourceHost=iverson6.addepar.com AND "/api"', include_egress=False),
+    'Iverson': NginxScraper('_sourceHost=iverson6.addepar.com AND "/api"', include_egress=False),
     'CompWorker': CompWorkerScraper(),
     'Snapshots': SnapshotScraper(),
     'Taxlots': TaxlotScraper(),
@@ -51,7 +51,7 @@ def process_edges(edges):
 
 def main():
     end = datetime.now().replace(microsecond=0,second=0,minute=0) + timedelta(hours=-1)
-    end = datetime(2018, 8, 2, 8)
+    end = datetime(2018, 7, 31, 11)
     start = end + timedelta(hours=0)
 
     timestamps = [timestamp for timestamp in rrule.rrule(rrule.HOURLY, dtstart=start, until=end)]

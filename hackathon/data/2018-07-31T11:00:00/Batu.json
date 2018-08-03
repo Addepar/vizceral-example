@@ -1,0 +1,1 @@
+{"timestamp": "2018-07-31T11:00:00", "edges": [{"bad_volume": 0, "from_ip": "kafka", "to_ip": "batu1.prod.addepar.com", "warning_volume": 0, "good_volume": 73672}]}
